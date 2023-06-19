@@ -30,9 +30,7 @@ public class RunnableForClient implements Runnable {
             while (!socket.isClosed()) {
                 String entry = in.readUTF();
                 if (entry.equals("/exit")) {
-                    System.out.println("You've disconected from server");
-                    out.writeUTF("Client " + name + " have disconected");
-                    out.flush();
+                    System.out.println("Client " + name + " have disconected");
                     in.close();
                     out.close();
                     socket.close();
